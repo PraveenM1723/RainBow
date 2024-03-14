@@ -42,8 +42,8 @@ public class SalesforceCode extends BaseCode {
 
     }
 
-    @When("user enters the username and password {string}")
-    public void enterUserandPass(String password) throws InterruptedException, IOException {
+    @When("user enters the username {string} and password {string}")
+    public void enterUserandPass(String username,String password) throws InterruptedException, IOException {
         driver.findElement(By.cssSelector("input#username")).sendKeys(ReadingExcel.getExcelData("login",0,0));
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
     }
