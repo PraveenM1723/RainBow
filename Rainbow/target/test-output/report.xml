@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="4.889" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login page of Salesforce" name="Error message validation with invalid credi" time="4.755">
+<system-out><![CDATA[
+When user enters the username and password "123"............................passed
+And user clicks the login button............................................passed
+Then user validates the error message.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
