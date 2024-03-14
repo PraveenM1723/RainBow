@@ -10,7 +10,7 @@ Feature: Login page of Salesforce
 
   @multiple
   Scenario Outline: multiple test
-    Given user navigates to salesforce application
+    #Given user navigates to salesforce application
     When user enters the username "<user name>" and password "<password>"
     And user clicks the login button
     Then user validates the error message

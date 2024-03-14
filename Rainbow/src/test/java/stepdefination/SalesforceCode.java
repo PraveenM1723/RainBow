@@ -6,16 +6,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import reusable.BaseCode;
 
 public class SalesforceCode extends BaseCode {
 
-//    @Given("user navigates to salesforce application")
-//            public void navigatToURL() {
-//        driver = new ChromeDriver();
-//        driver.get("https://login.salesforce.com/?locale=in");
-//
-//    }
+    @Given("user navigates to salesforce application")
+            public void navigatToURL() {
+        driver = new ChromeDriver();
+        driver.get("https://login.salesforce.com/?locale=in");
+
+    }
 
     @And("user clicks the login button")
     public void clickLogin(){
