@@ -9,6 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import reusable.BaseCode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedMap;
+
 public class SalesforceCode extends BaseCode {
 
     @Given("user navigates to salesforce application")
@@ -68,10 +72,13 @@ public class SalesforceCode extends BaseCode {
         WebElement infosysTable = driver.findElement(By.xpath("//table[@class='infobox vcard']"));
 
         int tableCoulmncount = infosysTable.findElements(By.tagName("th")).size();
+        List<String> columnoneValuList= new ArrayList<String>();
+
         for (int n=0;n<tableCoulmncount;n++){
             String columnName=infosysTable.findElements(By.tagName("th")).get(n).getText();
-            System.out.println(columnName);
+            columnoneValuList.add(columnName);
         }
+        System.out.println(columnoneValuList);
 
         int tableCoulmntwocount = infosysTable.findElements(By.tagName("td")).size();
         for (int n=2;n<tableCoulmncount;n++){
