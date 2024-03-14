@@ -70,10 +70,8 @@ public class SalesforceCode extends BaseCode {
     @Given("user extracts the column one value")
     public void columnOneValue() {
         WebElement infosysTable = driver.findElement(By.xpath("//table[@class='infobox vcard']"));
-
         int tableCoulmncount = infosysTable.findElements(By.tagName("th")).size();
         List<String> columnoneValuList= new ArrayList<String>();
-
         for (int n=0;n<tableCoulmncount;n++){
             String columnName=infosysTable.findElements(By.tagName("th")).get(n).getText();
             columnoneValuList.add(columnName);
@@ -81,17 +79,21 @@ public class SalesforceCode extends BaseCode {
         System.out.println(columnoneValuList);
 
         int tableCoulmntwocount = infosysTable.findElements(By.tagName("td")).size();
+        List<String> columntwoList = new ArrayList<String>();
         for (int n=2;n<tableCoulmncount;n++){
             String columntwoName=infosysTable.findElements(By.tagName("td")).get(n).getText();
-            System.out.println(columntwoName);
+            columntwoList.add(columntwoName);
         }
+        System.out.println(columntwoList);
 
         WebElement Acquisitions = driver.findElement(By.xpath("//table[@class='wikitable']"));
-        int columntwo=Acquisitions.findElements(By.tagName("//td[2]")).size();
+        int columntwo=Acquisitions.findElements(By.xpath("//tr//td[5]")).size();
+        List<String> acqList = new ArrayList<String>();
         for (int h=0;h<columntwo;h++){
-            String column2dis=Acquisitions.findElements(By.tagName("//td[2]")).get(h).getText();
-            System.out.println(column2dis);
+            String column2dis=Acquisitions.findElements(By.xpath("//tr//td[5]")).get(h).getText();
+            acqList.add(column2dis);
         }
+        System.out.println(acqList);
 
     }
 }
