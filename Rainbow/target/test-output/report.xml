@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="8.817" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="SpiceJet Automation" name="Table handling" time="8.697">
+<system-out><![CDATA[
+Given user extracts the column one value....................................passed
+]]></system-out>
+</testcase>
+</testsuite>
