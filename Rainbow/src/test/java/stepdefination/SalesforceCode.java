@@ -8,10 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import reusable.BaseCode;
+import reusable.ReadingExcel;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedMap;
 
 public class SalesforceCode extends BaseCode {
 
@@ -41,9 +42,9 @@ public class SalesforceCode extends BaseCode {
 
     }
 
-    @When("user enters the username {string} and password {string}")
-    public void enterUserandPass(String username, String password) throws InterruptedException {
-        driver.findElement(By.cssSelector("input#username")).sendKeys(username);
+    @When("user enters the username and password {string}")
+    public void enterUserandPass(String password) throws InterruptedException, IOException {
+        driver.findElement(By.cssSelector("input#username")).sendKeys(ReadingExcel.getExcelData("login",0,0));
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
     }
 
