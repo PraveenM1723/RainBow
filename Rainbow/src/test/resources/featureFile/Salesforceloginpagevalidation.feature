@@ -3,7 +3,7 @@ Feature: Login page of Salesforce
   @SC01 @regression
   Scenario: Error message validation with invalid credi
     #Given user navigates to salesforce application
-    When user enters the username and password "123"
+    When user enters the username "abc" and password "123"
     And user clicks the login button
     Then user validates the error message
 
