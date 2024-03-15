@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="4.759" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="validation of Amazon Apllication" name="mouse actions" time="4.628">
+<system-out><![CDATA[
+Given user navigates to baby whish list page................................passed
+]]></system-out>
+</testcase>
+</testsuite>
