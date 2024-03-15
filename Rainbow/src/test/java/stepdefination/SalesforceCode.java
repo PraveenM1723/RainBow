@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,10 +32,13 @@ public class SalesforceCode extends BaseCode {
     public void errorValidation(){
         String text = driver.findElement(By.xpath("//div[@id='error']")).getText();
         String expected="Please check your username and password. If you still can't log in, contact your Salesforce administrator.";
+
+        //        Assert.assertEquals(expected,text);
+
         if(text.equals(expected))
-            System.out.println("equal");
+            Assert.assertTrue(true);
         else
-            System.out.println("not equal");
+            Assert.assertTrue(false);
 
     }
     @Then("verify whether the user navigates to Home page")
@@ -44,7 +48,7 @@ public class SalesforceCode extends BaseCode {
 
     @When("user enters the username {string} and password {string}")
     public void enterUserandPass(String username,String password) throws InterruptedException, IOException {
-        driver.findElement(By.cssSelector("input#username")).sendKeys(ReadingExcel.getExcelData("login",0,0));
+        driver.findElement(By.cssSelector("#username")).sendKeys(ReadingExcel.getExcelData("login",0,0));
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
     }
 

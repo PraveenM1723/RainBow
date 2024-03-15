@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import reusable.BaseCode;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import static reusable.BaseCode.driver;
 
@@ -19,8 +20,9 @@ public class Hooks extends  BaseCode{
         BaseCode.launchBrowser();
     }
     @After
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
         System.out.println("execution ended");
+        Thread.sleep(300);
         driver.quit();
 
     }
