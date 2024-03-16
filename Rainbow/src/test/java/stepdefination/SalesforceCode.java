@@ -8,12 +8,16 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageobjectmodel.WikiPageTable;
 import reusable.BaseCode;
 import reusable.ReadingExcel;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static pageobjectmodel.WikiPageTable.getColumn;
+import static pageobjectmodel.WikiPageTable.getSpecificValueinTable;
 
 public class SalesforceCode extends BaseCode {
 
@@ -90,15 +94,20 @@ public class SalesforceCode extends BaseCode {
             columntwoList.add(columntwoName);
         }
         System.out.println(columntwoList);
+//
+//        WebElement Acquisitions = driver.findElement(By.xpath("//table[@class='wikitable']"));
+//        int columntwo=Acquisitions.findElements(By.xpath("//tr//td[5]")).size();
+//        List<String> acqList = new ArrayList<String>();
+//        for (int h=0;h<columntwo;h++){
+//            String column2dis=Acquisitions.findElements(By.xpath("//tr//td[5]")).get(h).getText();
+//            acqList.add(column2dis);
+//        }
+//        System.out.println(acqList);
+        List<String> lis = getColumn(Integer.parseInt(prop.getProperty("TablecoumnIndex")));
+        System.out.println(lis);
 
-        WebElement Acquisitions = driver.findElement(By.xpath("//table[@class='wikitable']"));
-        int columntwo=Acquisitions.findElements(By.xpath("//tr//td[5]")).size();
-        List<String> acqList = new ArrayList<String>();
-        for (int h=0;h<columntwo;h++){
-            String column2dis=Acquisitions.findElements(By.xpath("//tr//td[5]")).get(h).getText();
-            acqList.add(column2dis);
-        }
-        System.out.println(acqList);
+        System.out.println(getSpecificValueinTable(prop.getProperty("tableRowIndex"),prop.getProperty("tableColumnIndex")));
+
 
     }
 }

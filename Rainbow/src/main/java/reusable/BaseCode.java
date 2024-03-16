@@ -7,7 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -15,15 +14,20 @@ import java.util.Properties;
 public class BaseCode {
 
     public static WebDriver driver;
+    public static Properties prop;
     public static void launchBrowser() throws IOException {
+
 
 //        FileInputStream fis= new FileInputStream(new File("src/main/resources/configuration/config.properties"));
 //        Properties prop = new Properties();
 //        prop.load(fis);
-         FileInputStream capturingFiletoStream= new FileInputStream(pathReturn());
-         Properties prop = new Properties();
-         prop.load(capturingFiletoStream);
+//         FileInputStream capturingFiletoStream= new FileInputStream(pathReturn());
+//         Properties prop = new Properties();
+//         prop.load(capturingFiletoStream);
 
+        FileInputStream capturingFiletoStream= new FileInputStream(new File("src/main/resources/configuration/config.properties"));
+        prop = new Properties();
+        prop.load(capturingFiletoStream);
         if(prop.getProperty("browser").equalsIgnoreCase("edge"))
             driver=new EdgeDriver();
         else if (prop.getProperty("browser").equalsIgnoreCase("chrome"))
@@ -36,11 +40,6 @@ public class BaseCode {
         driver.get(prop.getProperty("environment"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    }
-
-    public static File pathReturn() throws FileNotFoundException {
-        File retruningFile= new File("src/main/resources/configuration/config.properties");
-        return retruningFile;
     }
 
 }

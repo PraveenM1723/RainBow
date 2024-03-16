@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="4.759" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="validation of Amazon Apllication" name="mouse actions" time="4.628">
+<testsuite name="Cucumber" time="3.588" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="SpiceJet Automation" name="Table handling" time="3.463">
 <system-out><![CDATA[
-Given user navigates to baby whish list page................................passed
+Given user extracts the column one value....................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
