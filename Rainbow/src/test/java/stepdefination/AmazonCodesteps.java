@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobjectmodel.SpcieJetPage;
 import reusable.BaseCode;
 
 import javax.swing.*;
@@ -63,7 +64,8 @@ public class AmazonCodesteps extends BaseCode {
     @Given("user handles the dynamic dropdown")
     public void dynamicDropdownHandle() {
         driver.findElement(By.xpath("//input[@id='ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT']")).click();
-        driver.findElement(By.xpath("//a[@value='BLR']")).click();
+//        driver.findElement(By.xpath("//a[@value='BLR']")).click();
+        SpcieJetPage.selectCityfromDropdown(prop.getProperty("SpiceJetCode"));
        // driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click(); or
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 //        WebElement toElement= driver.findElement(By.id("glsControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTNR"));
