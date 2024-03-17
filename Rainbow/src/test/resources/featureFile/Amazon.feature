@@ -30,3 +30,7 @@ Feature: validation of Amazon Apllication
   Scenario: Sign in into Amazon to get Error
     Given user provides credi
     Then validate the error
+
+  @Constructor
+  Scenario: Constructor Example
+    Given Sample
