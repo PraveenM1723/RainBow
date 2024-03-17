@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WikiPageTable extends BaseCode {
-    public static List<String> getColumn(int columnIndex){
+    public static List<String> getValues(int columnIndex){
        List<WebElement> web= driver.findElements(By.xpath("//table[@class='wikitable']//tr//td["+columnIndex+"]"));
        List<String> columnValues = new ArrayList<String>();
        for(WebElement op:web)
@@ -18,7 +18,7 @@ public class WikiPageTable extends BaseCode {
        return columnValues;
     }
 
-    public static String getSpecificValueinTable(String rowIndex, String columnIndex){
+    public static String getValues(String rowIndex, String columnIndex){
        return driver.findElement(By.xpath("//table[@class='wikitable']//tr["+rowIndex+"]//td["+columnIndex+"]")).getText();
     }
 }

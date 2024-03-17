@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageobjectmodel.WikiPageTable;
 import reusable.BaseCode;
 import reusable.ReadingExcel;
 
@@ -16,8 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pageobjectmodel.WikiPageTable.getColumn;
-import static pageobjectmodel.WikiPageTable.getSpecificValueinTable;
+import static pageobjectmodel.WikiPageTable.*;
 
 public class SalesforceCode extends BaseCode {
 
@@ -103,10 +101,10 @@ public class SalesforceCode extends BaseCode {
 //            acqList.add(column2dis);
 //        }
 //        System.out.println(acqList);
-        List<String> lis = getColumn(Integer.parseInt(prop.getProperty("TablecoumnIndex")));
+        List<String> lis = getValues(Integer.parseInt(prop.getProperty("TablecoumnIndex")));
         System.out.println(lis);
 
-        System.out.println(getSpecificValueinTable(prop.getProperty("tableRowIndex"),prop.getProperty("tableColumnIndex")));
+        System.out.println(getValues(prop.getProperty("tableRowIndex"),prop.getProperty("tableColumnIndex")));
 
 
     }
